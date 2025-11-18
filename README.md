@@ -1,78 +1,253 @@
-# MERN Stack Integration Assignment
+# 🛡️ SafeSpace Kenya - MERN Stack Domestic Violence Awareness Platform
 
-This assignment focuses on building a full-stack MERN (MongoDB, Express.js, React.js, Node.js) application that demonstrates seamless integration between front-end and back-end components.
+![MERN Stack](https://img.shields.io/badge/MERN-Full%20Stack-green)
+![React](https://img.shields.io/badge/React-18.2.0-blue)
+![Node.js](https://img.shields.io/badge/Node.js-22.21.0-green)
+![MongoDB](https://img.shields.io/badge/MongoDB-5.0+-green)
 
-## Assignment Overview
+A full-stack web application built with the MERN stack (MongoDB, Express.js, React.js, Node.js) that provides a safe platform for domestic violence survivors in Kenya to share stories, access resources, and find support.
 
-You will build a blog application with the following features:
-1. RESTful API with Express.js and MongoDB
-2. React front-end with component architecture
-3. Full CRUD functionality for blog posts
-4. User authentication and authorization
-5. Advanced features like image uploads and comments
+## 🎯 Project Overview
 
-## Project Structure
+**SafeSpace Kenya** transforms the traditional blog concept into a meaningful social impact platform addressing domestic violence awareness in Kenya. The application demonstrates seamless integration between frontend and backend components with a focus on safety, privacy, and user support.
 
-```
-mern-blog/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # Reusable components
-│   │   ├── pages/          # Page components
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API services
-│   │   ├── context/        # React context providers
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Express.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Route controllers
-│   ├── models/             # Mongoose models
-│   ├── routes/             # API routes
-│   ├── middleware/         # Custom middleware
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
-```
+### 🌍 Kenyan Context Features
+- Emergency contacts specific to Kenya (1195 GBV hotline, 999 police, 116 Childline)
+- County-specific support resources
+- Local organizations and partners
+- Culturally relevant content and approach
 
-## Getting Started
+## 🚀 Features
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week4-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+### Core Functionality
+- **Story Sharing**: Safe, anonymous platform for survivors to share experiences
+- **Resource Directory**: Comprehensive list of support services across Kenya
+- **Emergency Contacts**: Prominently displayed 24/7 helplines
+- **User Roles**: Differentiated access for survivors, counselors, advocates, legal experts, and healthcare workers
 
-## Files Included
+### Advanced Features
+- **Search & Filter**: Find stories by keywords, categories, and author roles
+- **Anonymous Posting**: Option to share stories without revealing identity
+- **Trigger Warnings**: Content warnings for sensitive material
+- **Safety-First Design**: Emergency resources always accessible
+- **Responsive UI**: Works seamlessly on desktop and mobile devices
 
-- `Week4-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Configuration files
-  - Sample models and components
+## 🛠️ Technology Stack
 
-## Requirements
+### Backend
+- **Node.js** with Express.js framework
+- **MongoDB** with Mongoose ODM
+- **JWT** for authentication (ready for implementation)
+- **Express Validator** for input validation
+- **CORS, Helmet, Rate Limiting** for security
 
+### Frontend
+- **React 18** with functional components and hooks
+- **React Router DOM** for navigation
+- **Context API** for state management
+- **Axios** for API communication
+- **Vite** for fast development and building
+- **CSS3** with responsive design
+
+## 📁 Project Structure
+mern-stack-assignment/
+├── server/ # Backend application
+│ ├── config/ # Database configuration
+│ ├── controllers/ # Route controllers
+│ ├── middleware/ # Custom middleware
+│ ├── models/ # MongoDB models
+│ ├── routes/ # API routes
+│ ├── uploads/ # File uploads directory
+│ ├── .env # Environment variables
+│ └── server.js # Entry point
+├── client/ # Frontend application
+│ ├── public/ # Static files
+│ ├── src/
+│ │ ├── components/ # Reusable components
+│ │ ├── context/ # React Context providers
+│ │ ├── hooks/ # Custom hooks
+│ │ ├── pages/ # Page components
+│ │ ├── services/ # API services
+│ │ ├── App.jsx # Main App component
+│ │ └── main.jsx # React entry point
+│ ├── .env # Client environment variables
+│ └── vite.config.js # Vite configuration
+└── README.md # Project documentation
+
+text
+
+## 🚀 Installation & Setup
+
+### Prerequisites
 - Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- npm or yarn
+- MongoDB (local installation or MongoDB Atlas)
 - Git
 
-## Submission
+### 1. Clone the Repository
+```bash
+git clone <your-repository-url>
+cd mern-stack-assignment
+2. Backend Setup
+bash
+cd server
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+# Install dependencies
+npm install
 
-1. Complete both the client and server portions of the application
-2. Implement all required API endpoints
-3. Create the necessary React components and hooks
-4. Document your API and setup process in the README.md
-5. Include screenshots of your working application
+# Set up environment variables
+cp .env.example .env
+# Edit .env with your MongoDB URI and other settings
 
-## Resources
+# Start the development server
+npm run dev
+The backend server will run on http://localhost:5000
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [Express.js Documentation](https://expressjs.com/)
-- [React Documentation](https://react.dev/)
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Mongoose Documentation](https://mongoosejs.com/docs/) 
+3. Frontend Setup
+bash
+cd client
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+The frontend application will run on http://localhost:5173
+
+🔌 API Endpoints
+Posts/Stories
+GET /api/posts - Get all stories (with pagination ready)
+
+GET /api/posts/:id - Get a specific story
+
+POST /api/posts - Create a new story
+
+PUT /api/posts/:id - Update a story
+
+DELETE /api/posts/:id - Delete a story
+
+Categories
+GET /api/categories - Get all categories
+
+POST /api/categories - Create a new category
+
+Health Check
+GET /api/health - Server status check
+
+🎯 Assignment Requirements Met
+✅ Task 1: Project Setup
+Clear directory structure for client and server
+
+MongoDB connection with Mongoose
+
+Express.js server with middleware
+
+React front-end with Vite
+
+Environment variables configuration
+
+✅ Task 2: Back-End Development
+Complete RESTful API implementation
+
+Mongoose models with proper relationships
+
+Input validation with express-validator
+
+Comprehensive error handling
+
+✅ Task 3: Front-End Development
+React components for all views
+
+React Router for navigation
+
+State management with Context API and hooks
+
+Custom API hook implementation
+
+✅ Task 4: Integration and Data Flow
+API service layer with Axios
+
+Global state management
+
+Form validation and handling
+
+Loading and error states
+
+✅ Task 5: Advanced Features
+Search and filtering functionality
+
+User role system
+
+Anonymous posting
+
+Trigger warnings
+
+Kenyan context localization
+
+🌟 Unique Features
+Social Impact Focus
+Domestic violence awareness platform
+
+Kenyan emergency contacts and resources
+
+Safety-first design principles
+
+Culturally appropriate content
+
+Technical Excellence
+Clean, maintainable code structure
+
+Comprehensive error handling
+
+Responsive design
+
+Professional UI/UX
+
+🧪 Testing
+Backend Testing
+bash
+cd server
+npm run dev
+# Server should start on port 5000
+Frontend Testing
+bash
+cd client
+npm run dev
+# Application should start on port 5173
+API Testing
+Use tools like Postman or curl to test endpoints:
+
+bash
+# Health check
+curl http://localhost:5000/api/health
+
+# Get all stories
+curl http://localhost:5000/api/posts
+📸 Application Screenshots
+(Screenshots should be added here showing:)
+
+Homepage with emergency contacts
+
+Stories list with search/filter
+
+Story detail view
+
+Share story form
+
+Resources page
+
+About page
+
+👥 Contributors
+Developed as a MERN stack assignment demonstration
+
+Focus on social impact and technical excellence
+
+📄 License
+This project is developed for educational purposes as part of a MERN stack assignment.
+
+🆘 Emergency Resources
+Kenya National GBV Hotline: 1195
+Police Emergency: 999
+Childline Kenya: 116
+
+Remember: You are not alone. Help is available.
