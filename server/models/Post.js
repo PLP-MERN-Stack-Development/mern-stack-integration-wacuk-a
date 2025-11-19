@@ -24,11 +24,6 @@ const postSchema = new mongoose.Schema({
     required: [true, 'Author name is required'],
     trim: true
   },
-  authorRole: {
-    type: String,
-    enum: ['survivor', 'counselor', 'advocate', 'legal_expert', 'healthcare_worker'],
-    required: true
-  },
   categories: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Category'
@@ -41,19 +36,6 @@ const postSchema = new mongoose.Schema({
     type: Boolean,
     default: true
   },
-  isAnonymous: {
-    type: Boolean,
-    default: false
-  },
-  triggerWarning: {
-    type: Boolean,
-    default: false
-  },
-  supportResources: [{
-    title: String,
-    phone: String,
-    description: String
-  }],
   slug: {
     type: String,
     unique: true,

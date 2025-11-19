@@ -11,14 +11,6 @@ const categorySchema = new mongoose.Schema({
   description: {
     type: String,
     maxlength: [200, 'Description cannot exceed 200 characters']
-  },
-  icon: {
-    type: String,
-    default: '📝'
-  },
-  color: {
-    type: String,
-    default: '#007bff'
   }
 }, {
   timestamps: true

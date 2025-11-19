@@ -55,11 +55,11 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Handle undefined routes - FIXED: Use express built-in 404 handler
-app.use((req, res, next) => {
+// Handle undefined routes - FIXED: Use proper route pattern
+app.all('*', (req, res) => {
   res.status(404).json({
     success: false,
-    error: `Route not found: ${req.method} ${req.originalUrl}`
+    error: `Route not found: ${req.originalUrl}`
   });
 });
 
